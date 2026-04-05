@@ -141,6 +141,28 @@ projects/<project-name>/
 
 ### 6. Оркестрация
 
+#### Шаг 0 — Сканирование репозитория (опционально)
+
+**Skill:** `git-repo-scanner`
+
+Выполняется, если передан Git URL или локальный путь к репозиторию
+(а не к отдельному файлу). Результат используется для:
+- автоматического определения языка и набора skill;
+- выбора целевого модуля (на основе hotspots и entry points);
+- обогащения документации контекстом (зависимости, история).
+
+**Артефакты:**
+```
+projects/<project-name>/docs/work/repo-overview.md
+projects/<project-name>/docs/dialogs/scanner-session.md
+```
+
+**Проверка:** язык определён, entry points найдены, commit hash зафиксирован.
+
+Если передан отдельный файл (не репозиторий) → пропустить шаг.
+
+---
+
 #### Шаг 1 — Анализ
 
 **Skill:** `<язык>-module-analyzer` или `universal-module-analyzer`
@@ -247,9 +269,11 @@ projects/<project-name>/docs/notes/advanced-note.md
 projects/<project-name>/reports/<project-name>-report-YYYY-MM-DD.md
 ```
 
-**Опциональные артефакты (если была публикация в Confluence):**
+**Опциональные артефакты:**
 ```
-projects/<project-name>/docs/dialogs/publisher-session.md
+projects/<project-name>/docs/work/repo-overview.md              ← если был git-repo-scanner
+projects/<project-name>/docs/dialogs/scanner-session.md         ← если был git-repo-scanner
+projects/<project-name>/docs/dialogs/publisher-session.md       ← если была публикация в Confluence
 ```
 
 Если отсутствует хотя бы один обязательный → процесс считается **НЕ завершённым**.
