@@ -189,7 +189,30 @@ projects/<project-name>/docs/notes/advanced-note.md
 
 ---
 
-#### Шаг 4 — Формирование репорта
+#### Шаг 4 — Публикация в Confluence (опционально)
+
+**Skill:** `confluence-publisher`
+
+Этот шаг выполняется, если пользователь запросил публикацию
+или если в параметрах запуска указан Confluence.
+
+**Вход:**
+```
+projects/<project-name>/docs/outputs/<project-name>-doc-advanced.md
+```
+
+**Артефакты:**
+```
+projects/<project-name>/docs/dialogs/publisher-session.md
+```
+
+**Проверка:** страница создана/обновлена; URL и ID зафиксированы в журнале.
+
+Если Confluence недоступен или не настроен → пропустить шаг, зафиксировать.
+
+---
+
+#### Шаг 5 — Формирование репорта
 
 После успешного аудита создать итоговый репорт:
 ```
@@ -210,6 +233,7 @@ projects/<project-name>/reports/<project-name>-report-YYYY-MM-DD.md
 
 ### 7. Финальная проверка
 
+**Обязательные артефакты (9 файлов):**
 ```
 projects/<project-name>/docs/work/analyzer-output.md
 projects/<project-name>/docs/work/doc-draft.md
@@ -222,7 +246,12 @@ projects/<project-name>/docs/notes/advanced-note.md
 projects/<project-name>/reports/<project-name>-report-YYYY-MM-DD.md
 ```
 
-Если отсутствует хотя бы один → процесс считается **НЕ завершённым**.
+**Опциональные артефакты (если была публикация в Confluence):**
+```
+projects/<project-name>/docs/dialogs/publisher-session.md
+```
+
+Если отсутствует хотя бы один обязательный → процесс считается **НЕ завершённым**.
 
 ---
 
