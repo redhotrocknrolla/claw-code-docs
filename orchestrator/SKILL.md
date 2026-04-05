@@ -82,6 +82,7 @@ projects/
 | Язык | Расширения | Набор skill |
 |------|-----------|-------------|
 | Rust | `.rs` | `rust-module-analyzer` / `rust-doc-writer` / `rust-style-auditor` |
+| Java | `.java` | `java-module-analyzer` / `java-doc-writer` / `java-style-auditor` |
 | Python | `.py` | `python-module-analyzer` / `python-doc-writer` / `python-style-auditor` *(в разработке)* |
 | TypeScript | `.ts`, `.tsx` | `ts-module-analyzer` / `ts-doc-writer` / `ts-style-auditor` *(в разработке)* |
 | Go | `.go` | `go-module-analyzer` / `go-doc-writer` / `go-style-auditor` *(в разработке)* |
